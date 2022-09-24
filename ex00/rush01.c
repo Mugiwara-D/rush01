@@ -6,7 +6,7 @@
 /*   By: bahommer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 08:43:44 by bahommer          #+#    #+#             */
-/*   Updated: 2022/09/24 13:16:25 by bahommer         ###   ########.fr       */
+/*   Updated: 2022/09/24 15:50:35 by bahommer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -57,6 +57,40 @@ char ft_test(char c, char **tab, int row, int col)
 	else if (ft_row_ok(c, tab, row) && ft_col_ok(c, tab, row))
 		return (c);
 	return (c);
+}
+
+
+char *ft_coord(char *str, char *coord)
+{
+	int j;
+	char max;
+	j = 0;
+	max = str[j]; 
+	while (j < 5)
+	{
+		if (str[j] < str[j + 2] && str[j + 2] > max)
+		{
+			coord[0]++;
+			max = str[j + 2];
+			j = j + 2;
+		}
+		else
+			j = j + 2;
+	}	
+	max = str[j]; 
+	while (j > 1 )
+	{
+		if (str[j] < str[j - 2] && str[j - 2] > max)
+		{
+			coord[2]++;
+			max = str[j - 2];
+			j = j - 2;
+		}
+		else
+			j = j - 2;
+	}
+	
+	return (coord);
 }
 
 char *ft_fill_raw(char *str, char **tab);
