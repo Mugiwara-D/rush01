@@ -1,8 +1,9 @@
 #include <stdio.h>
-char *ft_first_line(char *str);
-
+char **creat_tab(int size);
+void print_tab(char **tab, int size);
 int main(int ac, char **av)
 {
 	(void) ac;
-	printf("%s\n%s",av[1],ft_first_line(av[1]));
+	(void) av;
+	print_tab(creat_tab(8),8);
 }
