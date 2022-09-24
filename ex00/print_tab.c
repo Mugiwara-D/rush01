@@ -11,7 +11,7 @@ void	print_tab(char **tab, int size)
 
 	x = 0;
 	y = 0;
-	while (y < (size/2))
+	while (y < size/2)
  	{
 		while(x < size)
 		{
