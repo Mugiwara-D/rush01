@@ -6,7 +6,7 @@
 /*   By: bahommer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 08:43:44 by bahommer          #+#    #+#             */
-/*   Updated: 2022/09/24 09:42:43 by bahommer         ###   ########.fr       */
+/*   Updated: 2022/09/24 13:16:25 by bahommer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
@@ -27,40 +27,73 @@ int	ft_col_ok(char c, char **tab, int col)
 	return (1);
 }
 
-int	ft_line_ok(char c, char **tab, int line)
+int	ft_row_ok(char c, char **tab, int row)
 {
 	int i;
 
 	i = 0;
-	while(i < 8 && tab[line][i])
+	while(i < 8 && tab[row][i])
 	{
-		if (c == tab[line][i])
+		if (c == tab[row][i])
 			return (0);
 		i = i + 2;
 	}
 	return (1);
 }
 
-char ft_test(char c, char **tab, int line, int col)
+char ft_test(char c, char **tab, int row, int col)
 {
 	
-	if ((ft_line_ok(c, tab, line) == 0 || ft_col_ok(c, tab, col) == 0))
+	if ((ft_row_ok(c, tab, row) == 0 || ft_col_ok(c, tab, row) == 0))
 		{
 			if (c < '4')
 				{
 					c = c + 1;
-					ft_test(c , tab, line, col);
+					ft_test(c , tab, row, col);
 				}
 			else
 				c = '5';	
 		}
-	else if (ft_line_ok(c, tab, line) && ft_col_ok(c, tab, col))
+	else if (ft_row_ok(c, tab, row) && ft_col_ok(c, tab, row))
 		return (c);
 	return (c);
 }
 
+char *ft_fill_raw(char *str, char **tab);
+{
+	if (ft
+}
+
+char **ft_map(char *str)
+{
+	int i;
+	int col;
+	int	row;
+
+	i = 0;
+	col = 0;
+	row = 0;
+	while (col < 8) // ou str[i] ?
+	{
+		while (row < 8)
+		{
+			if (str[i] = 4)
+			{
+				tab[i][tab] = '1';
+				tab[i][tab] = '1';
+				tab[i][tab] = '1';
+				tab[i][tab] = '1';
+			}
+
+		}
+	}
+}
+
 int main()
 {
+
+
+
 	char **tab;
 	tab = (char **)malloc(sizeof(char*) * 7);
 	tab[0] = (char *)malloc(sizeof(char*) * 7);
