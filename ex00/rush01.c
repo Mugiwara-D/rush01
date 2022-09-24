@@ -6,13 +6,14 @@
 /*   By: bahommer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 08:43:44 by bahommer          #+#    #+#             */
-/*   Updated: 2022/09/24 15:50:35 by bahommer         ###   ########.fr       */
+/*   Updated: 2022/09/24 16:40:06 by maderuel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*
  	c1u	c2u c3u c4u c1d c2d c3d c4d r1l r2l r3l r4l r1r r2r r3r r4r
 str 0 	2	4	6	8	10	12	14	16	18	20	22	24	26	28	30 */
-
+#include <stdlib.h>
+#include <stdio.h>
 int	ft_col_ok(char c, char **tab, int col)
 {
 	int i;
@@ -93,34 +94,22 @@ char *ft_coord(char *str, char *coord)
 	return (coord);
 }
 
-char *ft_fill_raw(char *str, char **tab);
+void ft_resolve(char **tab)
 {
-	if (ft
-}
-
-char **ft_map(char *str)
-{
+	//char *coord;
 	int i;
-	int col;
-	int	row;
-
+	char c;
+	
+	//coord = "1,1";
 	i = 0;
-	col = 0;
-	row = 0;
-	while (col < 8) // ou str[i] ?
+	while (i < 8)
 	{
-		while (row < 8)
-		{
-			if (str[i] = 4)
-			{
-				tab[i][tab] = '1';
-				tab[i][tab] = '1';
-				tab[i][tab] = '1';
-				tab[i][tab] = '1';
-			}
-
-		}
+		c = ft_test(tab[0][i], tab, 0, i);
+		tab[2][i] = c;
+		i += 2;	
 	}
+
+
 }
 
 int main()
@@ -140,10 +129,10 @@ int main()
 
 
 
-	tab[0] = "1 2 3 4";
-	tab[2] = "4 v v v";
+	tab[0] = "0 v v v";
+	tab[2] = "v v v v";
 	tab[4] = "v v v v";
-	tab[6] = "4 3 2 1";
+	tab[6] = "v v v v";
 /*
 	tab[0][0] = '1';
 	tab[0][1] = '2';
@@ -170,6 +159,6 @@ int main()
 ft_test(tab[2][0], tab, 2, 0);
 printf
 	("%c", tab[2][0]);*/
-printf
-	("%c", ft_test(tab[2][0], tab, 2, 0));
+	ft_resolve( tab);
+	printf("%s", tab[2]);
 }
